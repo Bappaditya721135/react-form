@@ -15,17 +15,19 @@ export default function Form() {
             <div className="presonal-section">
                 <h4>Personal Data</h4>
             <label htmlFor="first-name">
-                First Name:
+                <p>First Name</p>
                 <input type="text" placeholder="first name" name="firstName" id="first-name" className="input" />
-            </label>
+                </label>
+            
             <label htmlFor="last-name">
-                Last Name:
+                <p>Last Name</p>
                 <input type="text" placeholder="last name" name="lastName" id="last-name" className="input" />
-            </label>
+                </label>
+
             <label htmlFor="age">
-                Age:
+                <p>Age</p>
                 <input type="number" name="age" min="18" max="65" id="age" className="input"/>
-            </label>
+                </label>
             
 <label htmlFor="country">Country</label>   
         
