@@ -12,7 +12,7 @@ export default function Form() {
                 </select>
             </div>
 
-            <div className="presonal-section">
+            <div className="personal-section">
                 <h4>Personal Data</h4>
             <label htmlFor="first-name">
                 <p>First Name</p>
