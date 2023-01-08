@@ -1,6 +1,6 @@
 export default function Form() {
     return (
-        <form>
+        <form id="form">
             <div className="job-section">
                 <h4>Job</h4>
                 <p>Application for:</p>
