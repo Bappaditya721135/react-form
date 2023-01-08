@@ -16,20 +16,20 @@ export default function Form() {
                 <h4>Personal Data</h4>
             <label htmlFor="first-name">
                 First Name:
-                <input type="text" placeholder="first name" name="firstName" id="first-name" />
+                <input type="text" placeholder="first name" name="firstName" id="first-name" className="input" />
             </label>
             <label htmlFor="last-name">
                 Last Name:
-                <input type="text" placeholder="last name" name="lastName" id="last-name" />
+                <input type="text" placeholder="last name" name="lastName" id="last-name" className="input" />
             </label>
             <label htmlFor="age">
                 Age:
-                <input type="number" name="age" min="18" max="65" id="age"/>
+                <input type="number" name="age" min="18" max="65" id="age" className="input"/>
             </label>
             
 <label htmlFor="country">Country</label>   
         
-        <select id="country" name="country" class="form-control">
+        <select id="country" name="country" class="form-control" className="input">
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>
@@ -277,7 +277,7 @@ export default function Form() {
         </select>
             <label>
                 Date of birth:
-                <input type="date" name="dateOfBirth" id="birth-date" />
+                <input type="date" name="dateOfBirth" id="birth-date" className="input" />
             </label>
             <label>
                 Gender:
@@ -290,7 +290,7 @@ export default function Form() {
             </label>
             <label htmlFor="email">
                 Email:
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" className="input" />
             </label>
             <label htmlFor="bio">
                 BIo:-
