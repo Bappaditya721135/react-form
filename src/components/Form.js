@@ -3,7 +3,7 @@ export default function Form() {
         <form>
             {/* job section  */}
              <section id="job-data">
-                <label htmlFor="job">Job application for:</label>
+                <label htmlFor="job" className="job-application">Job application for:</label>
                 <select name="job" id="job">
                     <option value="full-stact-developer">Full-Stack-Developer</option>
                     <option value="back-end-developer">Back-End-Developer</option>
@@ -30,7 +30,7 @@ export default function Form() {
 
             <div className="gender-group input-group">
                 <label htmlFor="gender">Gender:</label>
-                <div>
+                <div className="gender">
                     <input type="radio" name="gender" id="male" />
                     <label htmlFor="male">Male</label>
                     <input type="radio" name="gender" id="female" />
