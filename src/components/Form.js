@@ -46,7 +46,7 @@ export default function Form() {
 
             <div className="age-group input-group">
                 <label htmlFor="age">Date of birth:</label>
-                <input type="text" onChange={saveData} name="datOfBirth" id="age" placeholder="01/01/2001" />
+                <input type="date" onChange={saveData} name="datOfBirth" id="age" placeholder="01/01/2001" />
             </div>
 
             <div className="gender-group input-group">
