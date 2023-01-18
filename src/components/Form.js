@@ -2,30 +2,40 @@ import React from "react";
 
 export default function Form() {
 
-    const [formData, setFormData] = React.useState({});
+    const [formData, setFormData] = React.useState({
+        job: "front-end-developer",
+        firstName: "",
+        lastName: "",
+        datOfBirth: "",
+        gender: "",
+        email: "",
+        country: "India",
+        bio: ""
+    });
+    
 
     // to stop default submission of form 
     function handleSubmit(event) {
         event.preventDefault();
+        console.log(formData);
     } 
 
     function saveData(event) {
-        console.log(event.target.name)
+        const {name, value} = event.target;
         setFormData(prevFormData => {
             return {
                 ...prevFormData,
-                [event.target.name]: event.target.value,
+                [name]: value,
             }
         })
     };
 
-    console.log(formData);
     return (
         <form>
             {/* job section  */}
              <section id="job-data">
                 <label htmlFor="job" className="job-application">Job application for:</label>
-                <select name="job" onChange={saveData} id="job">
+                <select name="job" onChange={saveData} id="job" value={formData.job}>
                     <option value="full-stact-developer">Full-Stack-Developer</option>
                     <option value="back-end-developer">Back-End-Developer</option>
                     <option value="front-end-developer">Front-End-Developer</option>
@@ -33,41 +43,43 @@ export default function Form() {
                 </select>
             </section>
 
-            <section id="personal-data">
+             <section id="personal-data">
             <div className="first-name-group input-group">
                 <label htmlFor="first-name">First name:</label>
-                <input type="text" onChange={saveData} name="firstName" id="first-name" placeholder="enter your first name..." />
+                <input type="text" onChange={saveData} name="firstName" value={formData.firstName} id="first-name" placeholder="enter your first name..." />
             </div>
 
             <div className="last-name-group input-group">
                 <label htmlFor="first-name">Last name:</label>
-                <input type="text" onChange={saveData} name="lastName" id="last-name" placeholder="enter your last name..." />
+                <input type="text" onChange={saveData} name="lastName" value={formData.lastName} id="last-name" placeholder="enter your last name..." />
             </div>
 
             <div className="age-group input-group">
                 <label htmlFor="age">Date of birth:</label>
-                <input type="date" onChange={saveData} name="datOfBirth" id="age" placeholder="01/01/2001" />
+                <input type="date" onChange={saveData} name="datOfBirth" value={formData.datOfBirth} id="age" placeholder="01/01/2001" />
             </div>
 
             <div className="gender-group input-group">
                 <label htmlFor="gender">Gender:</label>
                 <div className="gender">
-                    <input type="radio" onClick={saveData} name="gender" id="male" value="male" />
+                    <input type="radio" onChange={saveData} name="gender" checked={formData.gender === "male"} id="male" value="male" />
                     <label htmlFor="male">Male</label>
-                    <input type="radio" onClick={saveData} name="gender" id="female" value="female" />
+                    <input type="radio" onChange={saveData} name="gender" checked={formData.gender === "female"} id="female" value="female" />
                     <label htmlFor="female">female</label>
-                    <input type="radio" onClick={saveData} name="gender" id="other" value="others" />
+                    <input type="radio" onChange={saveData} name="gender" checked={formData.gender === "others"} id="other" value="others" />
                     <label htmlFor="other">Other</label>
                 </div>
             </div>
+            
             <div className="emali-group input-group">
                 <label htmlFor="email">Email:</label>
-                <input type="email" onChange={saveData} name="email" id="email" placeholder="enter your email..." />
+                <input type="email" onChange={saveData} name="email" value={formData.email} id="email" placeholder="enter your email..." />
             </div>
+            
             <div className="country-group input-group">
                 <label htmlFor="country" className="country">Country</label>
 
-                <select id="country" onChange={saveData} name="country" className="form-control">
+                <select id="country" onChange={saveData} name="country" value={formData.country} className="form-control">
                     <option value="none">Country</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>
@@ -320,14 +332,15 @@ export default function Form() {
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
             </div>
+            
             <div className="bio-group input-group">
                 <label htmlFor="bio">Bio:</label>
-                <textarea name="bio" onChange={saveData} id="bio" placeholder="write something about yourself.."></textarea>
+                <textarea name="bio" value={formData.bio} onChange={saveData} id="bio" placeholder="write something about yourself.."></textarea>
             </div>
             <div className="submit-group">
             <input type="submit" onClick={handleSubmit} value="submit now" id="submit-btn" />
         </div>
-            </section>
+            </section> 
         </form>
     );
 }
